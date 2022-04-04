@@ -1,3 +1,5 @@
+import 'package:appwab_e_commerce/UI/screens/change_lang_screen.dart';
+import 'package:appwab_e_commerce/UI/screens/delivery_details_screen.dart';
 import 'package:appwab_e_commerce/UI/screens/nav%20bar/home_screen.dart';
 import 'package:appwab_e_commerce/UI/screens/nav%20bar/bottom_nav_bar_screen.dart';
 import 'package:appwab_e_commerce/UI/screens/nav%20bar/search_screen.dart';
@@ -28,6 +30,14 @@ class AppRouter {
             ));
       case cart:
         return MaterialPageRoute(builder: (_) => const ShoppingCartScreen());
+      case changeLang:
+        return MaterialPageRoute(builder: (_) => const ChangeLangScreen());
+      case deliveryDetails:
+        return MaterialPageRoute(builder: (_) =>
+            BlocProvider(
+              create: (context) => GeneralCubit(),
+              child: const DeliveryDetailsScreen(),
+            ));
     }
   }
 }

@@ -1,3 +1,5 @@
+import 'package:appwab_e_commerce/UI/widgets/widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bussiness logic/general/general_cubit.dart';
@@ -15,8 +17,8 @@ class ProductDetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: backGround,
       appBar: AppBar(
-        title: const Text(
-          'Product Details',
+        title: Text(
+          tr('product_d'),
           style: homeAppBar,
         ),
         centerTitle: true,
@@ -35,7 +37,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 Center(
                   child: Container(
                     width: width*0.9,
-                    height: height*0.6,
+                    height: height*0.61,
                     decoration: BoxDecoration(
                       color: white,
                       borderRadius: BorderRadius.circular(15)
@@ -55,7 +57,7 @@ class ProductDetailsScreen extends StatelessWidget {
                           SizedBox(
                             height: height * 0.05,
                           ),
-                          const Text('start from',style: navGrey),
+                          Text(tr('start'),style: navGrey),
                           SizedBox(
                             height: height * 0.01,
                           ),
@@ -63,7 +65,7 @@ class ProductDetailsScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('50.000 KD',style: titleStyle.copyWith(fontSize: 25),),
+                              Text('50.000' + tr('kd'),style: titleStyle.copyWith(fontSize: 25),),
                               const Icon(Icons.share)
                             ],
                           ),
@@ -75,7 +77,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 SizedBox(
                   height: height * 0.02,
                 ),
-                Text('Attributes',style: titleStyle.copyWith(fontSize: 25),),
+                Text(tr('attrib'),style: titleStyle.copyWith(fontSize: 25),),
                 SizedBox(
                   height: height * 0.01,
                 ),
@@ -145,7 +147,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 SizedBox(
                   height: height * 0.02,
                 ),
-                Text('Notes',style: titleStyle.copyWith(fontSize: 25),),
+                Text(tr('note'),style: titleStyle.copyWith(fontSize: 25),),
                 SizedBox(
                   height: height * 0.01,
                 ),
@@ -189,18 +191,21 @@ class ProductDetailsScreen extends StatelessWidget {
   Widget _buildFAB(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    return Container(
-      width: width*0.9,
-      height: height*0.07,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),color: red),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Icon(Icons.add_shopping_cart,color: white,),
-          SizedBox(width: width*0.02,),
-          const Text('Add to cart',style: selectStyle,)
-        ],
+    return InkWell(
+      onTap: () => dialogCart(context),
+      child: Container(
+        width: width*0.9,
+        height: height*0.07,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),color: red),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.add_shopping_cart,color: white,),
+            SizedBox(width: width*0.02,),
+            Text(tr('add'),style: selectStyle,)
+          ],
+        ),
       ),
     );
   }

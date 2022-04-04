@@ -1,4 +1,5 @@
 import 'package:appwab_e_commerce/constant/strings.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constant/colors.dart';
@@ -14,8 +15,8 @@ class CategoryScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: backGround,
       appBar: AppBar(
-        title: const Text(
-          'Categories',
+        title: Text(
+          tr('category'),
           style: homeAppBar,
         ),
         centerTitle: true,
@@ -31,10 +32,10 @@ class CategoryScreen extends StatelessWidget {
               SizedBox(
                 height: height * 0.01,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 18.0),
+              Padding(
+                padding: const EdgeInsets.only(left: 18.0),
                 child: Text(
-                  'All',
+                  tr('alL'),
                   style: homeAppBar,
                 ),
               ),
@@ -57,8 +58,8 @@ class CategoryScreen extends StatelessWidget {
                       scrollDirection: Axis.vertical,
                       itemBuilder: (context, index) => InkWell(
                         onTap: () => Navigator.pushNamed(context, pCategory),
-                              child: const Text(
-                            'Category',
+                              child: Text(
+                                tr('category'),
                             style: homeAppBar,
                           )),
                       separatorBuilder: (context, index) => const SizedBox(

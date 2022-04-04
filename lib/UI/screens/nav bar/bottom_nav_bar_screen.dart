@@ -6,6 +6,7 @@ import 'package:appwab_e_commerce/UI/screens/nav%20bar/settings_screen.dart';
 import 'package:appwab_e_commerce/constant/colors.dart';
 import 'package:appwab_e_commerce/constant/strings.dart';
 import 'package:appwab_e_commerce/constant/style.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -58,21 +59,21 @@ class _NavBarState extends State<NavBar> {
             Column(
               children: [
                 IconButton(icon: FaIcon(FontAwesomeIcons.home,size: 25.0,color: index == 0? red:lightBlack,), onPressed: ()=> onTap(0),),
-                Text('Home',style: index == 0? navRed:navGrey,)
+                Text(tr('home'),style: index == 0? navRed:navGrey,)
               ],
             ),
             SizedBox(width: width*0.09,),
             Column(
               children: [
                 IconButton(icon: FaIcon(FontAwesomeIcons.search,size: 25.0,color: index == 1? red:lightBlack,), onPressed: ()=>onTap(1),),
-                Text('Search',style: index == 1? navRed:navGrey,)
+                Text(tr('search'),style: index == 1? navRed:navGrey,)
               ],
             ),
             SizedBox(width: width*0.25,),
             Column(
               children: [
                 IconButton(icon: Icon(Icons.category,size: 25.0,color: index == 2? red:lightBlack,), onPressed: ()=> onTap(2),),
-                Text('Category',style: index == 2? navRed:navGrey,)
+                Text(tr('category'),style: index == 2? navRed:navGrey,)
               ],
             ),
             SizedBox(width: width*0.07,),
@@ -86,7 +87,7 @@ class _NavBarState extends State<NavBar> {
                     onTap(3),
                   },
                 ),
-                Text('Settings',style: index == 3? navRed:navGrey,)
+                Text(tr('settings'),style: index == 3? navRed:navGrey,)
               ],
             ),
           ],
@@ -98,7 +99,7 @@ class _NavBarState extends State<NavBar> {
   Widget _buildFAB() {
     return FloatingActionButton(
       backgroundColor: red,
-      child: const FaIcon(FontAwesomeIcons.plus),
+      child: const FaIcon(FontAwesomeIcons.shoppingBasket),
       onPressed: () {
         Navigator.pushNamed(context, cart);
       },

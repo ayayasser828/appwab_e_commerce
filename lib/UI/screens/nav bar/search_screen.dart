@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
@@ -15,8 +16,8 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: backGround,
       appBar: AppBar(
-        title: const Text(
-          'Search',
+        title: Text(
+          tr('search'),
           style: homeAppBar,
         ),
         centerTitle: true,
@@ -77,10 +78,10 @@ class SearchScreen extends StatelessWidget {
               width: width * 0.5,
               child: TextFormField(
                 textAlignVertical: TextAlignVertical.bottom,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   alignLabelWithHint: true,
-                  hintText: 'Enter a word to search',
-                  border: OutlineInputBorder(
+                  hintText: tr('s_word'),
+                  border: const OutlineInputBorder(
                     borderSide: BorderSide.none,
                   ),
                 ),

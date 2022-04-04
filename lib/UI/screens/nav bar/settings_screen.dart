@@ -1,3 +1,5 @@
+import 'package:appwab_e_commerce/constant/strings.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -27,7 +29,7 @@ class SettingsScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(height: height*0.02,),
-          items('About us', context, '', Icons.info_outline_rounded),
+          items(tr('about'), context, '', Icons.info_outline_rounded),
           SizedBox(height: height*0.02,),
           Container(
             width: width,
@@ -35,7 +37,7 @@ class SettingsScreen extends StatelessWidget {
             color: lightBlack,
           ),
           SizedBox(height: height*0.02,),
-          items('Switch Language', context, '', Icons.blur_circular_outlined),
+          items(tr('switch'), context, changeLang, Icons.blur_circular_outlined),
           SizedBox(height: height*0.02,),
           Container(
             width: width,
@@ -43,7 +45,7 @@ class SettingsScreen extends StatelessWidget {
             color: lightBlack,
           ),
           SizedBox(height: height*0.02,),
-          items('Terms & Conditions', context, '', Icons.info_outline_rounded),
+          items(tr('tc'), context, '', Icons.info_outline_rounded),
           SizedBox(height: height*0.02,),
           Container(
             width: width,
@@ -51,7 +53,7 @@ class SettingsScreen extends StatelessWidget {
             color: lightBlack,
           ),
           SizedBox(height: height*0.02,),
-          items('Privacy policy', context, '', Icons.info_outline_rounded),
+          items(tr('pp'), context, '', Icons.info_outline_rounded),
           SizedBox(height: height*0.2,),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,17 +62,17 @@ class SettingsScreen extends StatelessWidget {
               SizedBox(width: width*0.05,),
               const Icon(Icons.featured_video,color: lightBlack,),
               SizedBox(width: width*0.03,),
-              const Text(
-                'Contact us',
+              Text(
+                tr('contact'),
                 style: profileItem,
               ),
             ],
           ),
           SizedBox(height: height*0.02,),
-          const Padding(
-            padding: EdgeInsets.only(left: 30.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 30.0),
             child: Text(
-              'Social media',
+              tr('media'),
               style: profileItem,
             ),
           ),
